@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap";
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+
+header {
+ background-color: #333333;
+ color: white;
+ height: 50px;
+ font-size: 20px;
+ padding-top:10px;
+}
+
+.alert {
+ color: red;
+}
+
+.notice {
+  color: green;
+}
+
+.nav-link-home {
+ color: white;
+}
+
+.nav-link-home:hover{
+ color: #E5E5E5;
+}
+
+
+
+.nav-link-user {
+ color: white;
+}
+
+.nav-link-user:hover{
+ color: #E5E5E5;
+}
+
+
+.nav-link-book {
+ color: white;
+}
+
+.nav-link-book:hover{
+ color: #E5E5E5;
+}
+
+.nav-link-delete {
+ color: white;
+}
+
+.nav-link-delete:hover{
+ color: #E5E5E5;
+}
+
+.nav-link-about:hover{
+ color: #E5E5E5;
+}
+
+.nav-link-up:hover{
+ color: #E5E5E5;
+}
+
+.nav-link-in:hover{
+ color: #E5E5E5;
+}
+
+footer {
+ text-align: center;
+}
+
+
+
+span {
+ color: white;
+}

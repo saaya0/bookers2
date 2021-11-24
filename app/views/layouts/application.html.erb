@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+      <header>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2", "bookers">
+            <a href="/" style="color: white">Bookers</a>
+            </div>
+            <div class="col-lg-5"></div>
+            <div class="col-lg-5">
+            <% if user_signed_in? %>
+               <%= link_to user_path(current_user), class: "nav-link-home" do %>
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+                <% end %>
+                <%= link_to users_path, class: "nav-link-user" do %>
+                  <i class="fas fa-users"></i>
+                  <span>Users</span>
+                <% end %>
+
+                <%= link_to books_path, class: "nav-link-book" do %>
+                  <i class="fas fa-book-open"></i>
+                  <span>Books</span>
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link-delete" do %>
+                  <i class="fas fa-sign-out-alt"></i>
+                  <span>Log out</span>
+                <% end %>
+            <% else %>
+              <%= link_to root_path, class: "nav-link-home" do %>
+                  <i class="fas fa-home"></i>
+                  <span>Home</span>
+              <% end %>
+              <%= link_to home_about_path, class: "nav-link-about" do %>
+                  <i class="fas fa-link"></i>
+                  <span>About</span>
+              <% end %>
+              <%= link_to new_user_registration_path, class: "nav-link-up" do %>
+                  <i class="fas fa-user-plus"></i>
+                  <span>Sign up</span>
+              <% end %>
+              <%= link_to new_user_session_path, class: "nav-link-in" do %>
+                  <i class="fas fa-sign-in-alt"></i>
+                  <span>Log in</span>
+              <% end %>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="alert">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
+      </div>
+
+      <main>
+      <%= yield %>
+      </main>
+      <footer>
+        <div class="container mt-5"></div>
+          <div class="row">
+            <div class="mx-auto">
+              <p>CopyRight Infratop.inc</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+  </body>
+</html>
